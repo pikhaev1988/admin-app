@@ -80,13 +80,23 @@ open App.xcworkspace
 
 ### Вариант B: Codemagic (рекомендуется)
 
-1. Зарегистрируйтесь на [codemagic.io](https://codemagic.io)
-2. Подключите репозиторий `pikhaev1988/admin-app`
-3. В **Teams → Code signing identities** загрузите сертификат и provisioning profile для `net.nohchi.restoran`
-4. В **Integrations** подключите App Store Connect API key
-5. Запустите workflow из `codemagic.yaml`
+В `codemagic.yaml` три workflow:
 
-Codemagic соберёт `.ipa` и загрузит в TestFlight.
+| Workflow | Когда использовать |
+|----------|-------------------|
+| `ios-ci` | Сразу после подключения репо — проверка сборки без подписи |
+| `ios-release` | Подписанный `.ipa` для ручной загрузки |
+| `ios-testflight` | Закомментирован — включите после настройки Apple |
+
+**Шаг 1.** Подключите репозиторий на [codemagic.io](https://codemagic.io) и запустите **`ios-ci`**.
+
+**Шаг 2.** App Store Connect → Users and Access → Integrations → создайте API key.
+
+**Шаг 3.** Codemagic → Team settings → Integrations → Developer Portal → добавьте ключ с именем **`Restoran ASC`** (имя должно совпадать с `codemagic.yaml`).
+
+**Шаг 4.** Запустите **`ios-release`** — скачайте `.ipa` из артефактов.
+
+**Шаг 5 (TestFlight).** В App Store Connect создайте приложение, скопируйте числовой **Apple ID** (App Information). Раскомментируйте workflow `ios-testflight` в `codemagic.yaml`, подставьте `APP_STORE_APPLE_ID: ваш_id` и запустите.
 
 ---
 
