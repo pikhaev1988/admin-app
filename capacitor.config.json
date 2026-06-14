@@ -1,0 +1,30 @@
+{
+  "appId": "net.nohchi.restoran",
+  "appName": "Restoran",
+  "webDir": "www",
+  "server": {
+    "url": "https://nohchi.net/login/",
+    "cleartext": false,
+    "allowNavigation": ["nohchi.net", "*.nohchi.net"]
+  },
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#fff1ea"
+  },
+  "ios": {
+    "backgroundColor": "#fff1ea",
+    "contentInset": "automatic",
+    "scheme": "Restoran"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1200,
+      "backgroundColor": "#fff1ea",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "style": "LIGHT",
+      "backgroundColor": "#ff5a1f"
+    }
+  }
+}

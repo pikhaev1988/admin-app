@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Restoran</string>
+    <string name="title_activity_main">Restoran</string>
+    <string name="package_name">net.nohchi.restoran</string>
+    <string name="custom_url_scheme">net.nohchi.restoran</string>
+</resources>

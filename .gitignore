@@ -1,0 +1,28 @@
+node_modules/
+.DS_Store
+*.apk
+*.ipa
+*.aab
+
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+android/capacitor-cordova-android-plugins/build/
+android/local.properties
+*.keystore
+*.jks
+
+# iOS
+ios/App/Pods/
+ios/App/build/
+ios/App/DerivedData/
+ios/App/App.xcworkspace/xcuserdata/
+ios/App/App.xcodeproj/xcuserdata/
+ios/App/App.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+*.xcuserstate
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
